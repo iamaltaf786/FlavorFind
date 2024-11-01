@@ -38,5 +38,3 @@ function MealInfo() {
 }
 
 export default MealInfo;
-
-// 32:55
