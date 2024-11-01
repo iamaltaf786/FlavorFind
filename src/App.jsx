@@ -1,14 +1,16 @@
-import { useState } from "react";
 import "./App.css";
 import MainPage from "./component/MainPage";
+import { Route, Routes } from "react-router-dom";
+import MealInfo from "./component/MealInfo";
 
 function App() {
   return (
-    <MainPage />
-
-    // <>
-    //   <h1>Hello food recipe</h1>
-    // </>
+    <>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/:mealid" element={<MealInfo />} />
+      </Routes>
+    </>
   );
 }
 
