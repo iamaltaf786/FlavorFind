@@ -1,7 +1,7 @@
 import "./App.css";
 import MainPage from "./component/MainPage";
 import { Route, Routes } from "react-router-dom";
-import MealInfo from "./component/MealInfo";
+import MealInfo from "./component/Mealinfo";
 
 function App() {
   return (

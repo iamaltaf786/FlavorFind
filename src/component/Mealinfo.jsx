@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function MealInfo() {
   const { mealid } = useParams();
-
   const [info, setInfo] = useState(null);
 
-  const getInfo = async () => {
-    const get = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealid}`
-    );
-    const jsonData = await get.json();
-    setInfo(jsonData.meals[0]);
-  };
-
-  if (info != "") {
+  useEffect(() => {
+    const getInfo = async () => {
+      try {
+        const response = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealid}`
+        );
+        const jsonData = await response.json();
+        setInfo(jsonData.meals[0]);
+      } catch (error) {
+        console.error("Error fetching meal data:", error);
+      }
+    };
     getInfo();
-  }
+  }, [mealid]); // Dependency array with mealid
 
   return (
     <>
@@ -24,11 +26,11 @@ function MealInfo() {
         "Data Not Found"
       ) : (
         <div className="mealInfo">
-          <img src={info.strMealThumb} />
+          <img src={info.strMealThumb} alt={info.strMeal} />
           <div className="info">
             <h1>Recipe Details</h1>
             <button>{info.strMeal}</button>
-            <h3>Instruction's</h3>
+            <h3>Instructions</h3>
             <p>{info.strInstructions}</p>
           </div>
         </div>
