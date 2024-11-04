@@ -51,22 +51,35 @@ function MainPage() {
 
   return (
     <>
-      <h1 className="head">Food Recipe App</h1>
-      <div className="container">
-        <div className="searchBar">
+      <h1 className="block text-center text-3xl mb-1.5 mt-6 font-bold not-italic">
+        Food Recipe App
+      </h1>
+      <div className="container mx-auto mt-8">
+        <div className="flex justify-center gap-2 mt-5">
           <input
-            onKeyDown={handleKeyDown} // onKeyDown event to trigger Enter button
+            onKeyDown={handleKeyDown}
             onChange={handleInput}
             type="text"
+            className="w-96 p-2 text-lg border-none bg-gray-300 rounded"
             placeholder="Enter Dish Name"
           />
-          <button onClick={myFun}>Search</button>
+          <button
+            onClick={myFun}
+            className="w-24 bg-customOrange text-white text-lg rounded cursor-pointer hover:bg-orange-600 transition-transform transform hover:scale-105"
+          >
+            Search
+          </button>
         </div>
-        {message && <h4 className="error">{message}</h4>}
+        {message && (
+          <h4 className="text-center bg-green-200 p-4 shadow-lg text-lg">
+            {message}
+          </h4>
+        )}
 
-        {/* Loading screen */}
         {loading ? (
-          <div className="loading">Loading...</div>
+          <div className="text-center text-lg text-gray-600 p-5 mt-5">
+            Loading...
+          </div>
         ) : (
           <div>
             <MealCards detail={data} />
