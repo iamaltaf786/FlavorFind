@@ -8,7 +8,7 @@ function MealCards({ detail }) {
         detail.map((curItem) => (
           <div
             key={curItem.idMeal}
-            className="shadow-customRed w-72 h-96 text-center bg-white rounded-lg"
+            className="shadow-customRed w-72 h-96 text-center bg-white rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
           >
             <img
               src={curItem.strMealThumb}

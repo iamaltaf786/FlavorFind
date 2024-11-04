@@ -22,9 +22,9 @@ function MainPage() {
       setMessage("Please Type Something like...chocolate, veg, cake, etc.");
       setData(null);
 
-      // setTimeout(() => {
-      //   setMessage("");
-      // }, 3000);
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
     } else {
       setLoading(true); // Show loading
       setMessage(""); // Clear previous messages if any
