@@ -21,31 +21,34 @@ function MainPage() {
     if (search === "") {
       setMessage("Please Type Something like...chocolate, veg, cake, etc.");
       setData(null);
-      return;
-    }
 
-    setLoading(true); // Show loading
-    setMessage(""); // Clear previous messages if any
+      // setTimeout(() => {
+      //   setMessage("");
+      // }, 3000);
+    } else {
+      setLoading(true); // Show loading
+      setMessage(""); // Clear previous messages if any
 
-    // Start the loading timer for 2 seconds
-    const loadingTimer = setTimeout(() => {
-      setLoading(false); // Hide loading after 2 seconds
-    }, 4000);
+      // Start the loading timer for 2 seconds
+      const loadingTimer = setTimeout(() => {
+        setLoading(false); // Hide loading after 2 seconds
+      }, 4000);
 
-    try {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
-      );
-      const data = await res.json();
+      try {
+        const res = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+        );
+        const data = await res.json();
 
-      // Clear loading after fetching data
-      clearTimeout(loadingTimer); // Clear timer
-      setData(data.meals); // Set fetched data
-      setLoading(false); // Hide loading once data is ready
-    } catch {
-      setMessage("Error fetching data");
-      clearTimeout(loadingTimer); // Clear timer if there was an error
-      setLoading(false); // Stop loading in case of error
+        // Clear loading after fetching data
+        clearTimeout(loadingTimer); // Clear timer
+        setData(data.meals); // Set fetched data
+        setLoading(false); // Hide loading once data is ready
+      } catch {
+        setMessage("Error fetching data");
+        clearTimeout(loadingTimer); // Clear timer if there was an error
+        setLoading(false); // Stop loading in case of error
+      }
     }
   };
 
@@ -60,7 +63,7 @@ function MainPage() {
             onKeyDown={handleKeyDown}
             onChange={handleInput}
             type="text"
-            className="w-96 p-2 text-lg border-none bg-gray-300 rounded"
+            className="w-96 p-2 text-[22px] rounded border-none bg-customInputBg"
             placeholder="Enter Dish Name"
           />
           <button
@@ -71,7 +74,7 @@ function MainPage() {
           </button>
         </div>
         {message && (
-          <h4 className="text-center bg-green-200 p-4 shadow-lg text-lg">
+          <h4 className=" mt-6 text-center bg-customErrorColor p-4 shadow-lg text-lg">
             {message}
           </h4>
         )}

@@ -4,5 +4,5 @@
 
 body {
   @apply bg-[#ff6347] m-0; /* Use Tailwind for body background color and margin */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+  @apply font-system antialiased;
 }
