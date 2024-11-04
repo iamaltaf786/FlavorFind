@@ -34,6 +34,7 @@ code {
   border: none;
   font-size: 20px;
   border-radius: 6px;
+  cursor: pointer;
 }
 .meals {
   display: flex;
@@ -104,6 +105,9 @@ code {
 }
 .head {
   text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-top: 20px;
 }
 .error {
   text-align: center;
@@ -118,4 +122,34 @@ code {
   color: #555;
   padding: 20px;
   margin-top: 20px;
+}
+.searchBar button:hover,
+.mealImg button:hover,
+.mealInfo button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+.searchBar button,
+.mealImg button,
+.mealInfo button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.loading {
+  color: #dedede; /* Ensure this matches your preferred loading color */
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  margin-top: 20px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }

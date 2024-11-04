@@ -5,7 +5,6 @@ function MainPage() {
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
   const [message, setMessage] = useState("");
-
   const [loading, setLoading] = useState(false); // for loading screen
 
   const handleInput = (e) => {
@@ -22,24 +21,31 @@ function MainPage() {
     if (search === "") {
       setMessage("Please Type Something like...chocolate, veg, cake, etc.");
       setData(null);
+      return;
+    }
 
-      setTimeout(() => {
-        setMessage("");
-      }, 3000);
-    } else {
-      setLoading(true); // Set loading to true when search starts
+    setLoading(true); // Show loading
+    setMessage(""); // Clear previous messages if any
 
-      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data.meals);
-          setLoading(false); // Set loading to false when data is fetched
-        })
-        .catch(() => {
-          setLoading(false); // Stop loading if an error occurs
-          setMessage("Error fetching data");
-        });
-      setMessage("");
+    // Start the loading timer for 2 seconds
+    const loadingTimer = setTimeout(() => {
+      setLoading(false); // Hide loading after 2 seconds
+    }, 4000);
+
+    try {
+      const res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+      );
+      const data = await res.json();
+
+      // Clear loading after fetching data
+      clearTimeout(loadingTimer); // Clear timer
+      setData(data.meals); // Set fetched data
+      setLoading(false); // Hide loading once data is ready
+    } catch {
+      setMessage("Error fetching data");
+      clearTimeout(loadingTimer); // Clear timer if there was an error
+      setLoading(false); // Stop loading in case of error
     }
   };
 
