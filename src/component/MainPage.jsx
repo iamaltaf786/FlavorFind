@@ -51,7 +51,7 @@ function MainPage() {
       }
     }
   };
-
+  // console.log("MealPage rendered");
   return (
     <>
       <h1 className="block text-center text-3xl mb-1.5 mt-6 font-bold not-italic">
@@ -59,6 +59,12 @@ function MainPage() {
       </h1>
       <div className="container mx-auto mt-8">
         <div className="flex justify-center gap-2 mt-5">
+          {/* <button
+            onClick={() => (window.location.href = "/#/categories")} // Navigate to categories
+            className="w-24 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105"
+          >
+            Categories
+          </button> */}
           <input
             onKeyDown={handleKeyDown}
             onChange={handleInput}
@@ -72,7 +78,22 @@ function MainPage() {
           >
             Search
           </button>
+          {/* All Categories Button - placed directly to the right of the search button */}
+          <button
+            onClick={() => (window.location.href = "/#/categories")} // Navigate to categories
+            className="w-48 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105"
+          >
+            All Categories
+          </button>
         </div>
+        {/* <div className="flex justify-center mt-4">
+          <button
+            onClick={() => (window.location.href = "/#/categories")} // Navigate to categories
+            className="w-24 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105"
+          >
+            Categories
+          </button>
+        </div> */}
         {message && (
           <h4 className=" mt-6 text-center bg-customErrorColor p-4 shadow-lg text-lg">
             {message}
@@ -88,6 +109,14 @@ function MainPage() {
             <MealCards detail={data} />
           </div>
         )}
+        {/* <div className="flex justify-center mt-4">
+          <button
+            onClick={() => (window.location.href = "/#/categories")} // Navigate to categories
+            className="w-48 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105"
+          >
+            All Categories
+          </button>
+        </div> */}
       </div>
     </>
   );

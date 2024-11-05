@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function MealCards({ detail }) {
+  // console.log("MealCard rendered");
   return (
     <div className="flex flex-wrap gap-5 justify-center w-11/12 mx-auto mt-11">
       {detail && detail.length > 0 ? (
