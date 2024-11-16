@@ -1,8 +1,10 @@
 # Food Recipe App
 
-![Screenshot 1](src/assets/Homepage.png)
-![Screenshot 2](src/assets/Recipe-Detail.png)
-
+<img src="src/assets/Homepage.png" alt="Screenshot 1" />
+<div style="display: flex; justify-content: space-between;">
+  <img src="src/assets/Recipe-Detail.png" alt="Screenshot 2" style="width: 49.5%;"/>
+  <img src="src/assets/All-category.png" alt="Screenshot 3" style="width: 49.5%;"/>
+</div>
 ## Description
 
 The Food Recipe App is a React-based application that allows users to search for various recipes. Users can enter a dish name (such as... cake, veg, egg, chilli, etc.) to find recipes and view detailed instructions for each meal.
@@ -35,7 +37,7 @@ To get a local copy up and running, follow these steps:
 2. Install the dependencies:
 
    ```bash
-   npm install
+   npm i
 
    ```
 
