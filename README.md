@@ -5,6 +5,7 @@
   <img src="src/assets/Recipe-Detail.png" alt="Screenshot 2" style="width: 49.5%;"/>
   <img src="src/assets/All-category.png" alt="Screenshot 3" style="width: 49.5%;"/>
 </div>
+
 ## Description
 
 The Food Recipe App is a React-based application that allows users to search for various recipes. Users can enter a dish name (such as... cake, veg, egg, chilli, etc.) to find recipes and view detailed instructions for each meal.
