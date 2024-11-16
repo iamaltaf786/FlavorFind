@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MealCards from "./MealCards";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   const [data, setData] = useState(null);
@@ -79,12 +80,12 @@ function MainPage() {
             Search
           </button>
           {/* All Categories Button - placed directly to the right of the search button */}
-          <button
-            onClick={() => (window.location.href = "/#/categories")} // Navigate to categories
-            className="w-48 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105"
+          <Link
+            to="/categories"
+            className="w-48 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105 text-center block p-2"
           >
             All Categories
-          </button>
+          </Link>
         </div>
         {/* <div className="flex justify-center mt-4">
           <button
