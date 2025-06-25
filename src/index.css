@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#ff6347] m-0; /* Use Tailwind for body background color and margin */
+  @apply  m-0; /* Use Tailwind for body background color and margin */
   @apply font-system antialiased;
 }

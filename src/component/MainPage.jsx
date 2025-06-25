@@ -56,7 +56,7 @@ function MainPage() {
   return (
     <>
       <h1 className="block text-center text-3xl mb-1.5 mt-6 font-bold not-italic">
-        Food Recipe App
+        Search Your Food
       </h1>
       <div className="container mx-auto mt-8">
         <div className="flex justify-center gap-2 mt-5">
@@ -84,7 +84,7 @@ function MainPage() {
             to="/categories"
             className="w-48 bg-blue-500 text-white text-lg rounded cursor-pointer hover:bg-blue-600 transition-transform transform hover:scale-105 text-center block p-2"
           >
-            All Categories
+            View All Recipies
           </Link>
         </div>
         {/* <div className="flex justify-center mt-4">
