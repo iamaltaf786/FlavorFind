@@ -1,7 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodCart from "./FoodCart";
+import MealCards from "./MealCards";
 
 function HeroSection() {
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false); // for loading screen
+
+  const handleInput = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const searchRecipe = async () => {
+    if (search === "") {
+      setData(null);
+    } else {
+      setLoading(true); // Show loading
+
+      // Start the loading timer for 2 seconds
+      const loadingTimer = setTimeout(() => {
+        setLoading(false); // Hide loading after 2 seconds
+      }, 4000);
+
+      try {
+        const res = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+        );
+        const data = await res.json();
+
+        clearTimeout(loadingTimer); // Clear timer
+        setData(data.meals); // Set fetched data
+        setLoading(false); // Hide loading once data is ready
+      
+        console.log(data.meals);
+      } catch {
+        console.error("Error fetching data");
+        
+        setLoading(false); // Stop loading in case of error
+        clearTimeout(loadingTimer); // Clear timer if there was an error
+      }
+    }
+  };
   return (
     <section className="bg-white text-gray-900 py-12 px-6 md:px-16">
       {/* Hero Top */}
@@ -14,15 +53,20 @@ function HeroSection() {
             professional chef.
           </h1>
           <p className="text-gray-600 mb-6">
-            It’s time to make delicious food with the best recipes and experience like a professional chef.
+            It’s time to make delicious food with the best recipes and
+            experience like a professional chef.
           </p>
           <div className="flex">
             <input
+              onChange={handleInput}
               type="text"
               placeholder="Type your favorite recipe here"
               className="p-3 rounded-l-lg border border-gray-300 w-full max-w-md"
             />
-            <button className="bg-orange-500 text-white px-5 py-3 rounded-r-lg hover:bg-orange-600">
+            <button
+              onClick={searchRecipe}
+              className="bg-orange-500 text-white px-5 py-3 rounded-r-lg hover:bg-orange-600"
+            >
               Search
             </button>
           </div>
@@ -42,12 +86,25 @@ function HeroSection() {
           </div>
           <div className="absolute bottom-4 right-4 bg-white p-3 rounded-xl shadow-lg text-xs max-w-[180px]">
             <p className="text-gray-700 mb-1">
-              The meals provided are so varied and made by skilled chefs. Perfect!
+              The meals provided are so varied and made by skilled chefs.
+              Perfect!
             </p>
-            <p className="text-gray-500 font-semibold">— Jessica Owen, Food Blogger</p>
+            <p className="text-gray-500 font-semibold">
+              — Jessica Owen, Food Blogger
+            </p>
           </div>
         </div>
       </div>
+
+      {loading ? (
+        <div className="text-center text-lg text-gray-600 p-5 mt-5">
+          Loading...
+        </div>
+      ) : (
+        <div>
+          <MealCards detail={data} />
+        </div>
+      )}
 
       <FoodCart />
 
@@ -96,7 +153,8 @@ function HeroSection() {
           <div>
             <h3 className="text-2xl font-bold mb-2">Let's cook now</h3>
             <p className="text-gray-600 mb-4">
-              Make your family happy with the dishes you make. With us, cooking just got easier.
+              Make your family happy with the dishes you make. With us, cooking
+              just got easier.
             </p>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -115,11 +173,17 @@ function HeroSection() {
           </div>
 
           <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
-            <p className="text-orange-600 font-semibold text-lg mb-1">20k Positive Comment</p>
-            <p className="text-sm text-gray-700">
-              See what they have to say about the recipes we made. Happy cooking.
+            <p className="text-orange-600 font-semibold text-lg mb-1">
+              20k Positive Comment
             </p>
-            <a href="#" className="text-orange-600 text-sm font-medium mt-2 inline-block">
+            <p className="text-sm text-gray-700">
+              See what they have to say about the recipes we made. Happy
+              cooking.
+            </p>
+            <a
+              href="#"
+              className="text-orange-600 text-sm font-medium mt-2 inline-block"
+            >
               See feedback →
             </a>
           </div>
