@@ -9,7 +9,7 @@ export default {
         customInputBg: "#e7e7e7",
       },
       boxShadow: {
-        customRed: "0 3px 3px 3px #F22020", // Adding the custom shadow
+        customRed: "#f0ca62 0px 0px 0px 3px", // Adding the custom shadow
       },
       fontFamily: {
         system: [
@@ -30,3 +30,4 @@ export default {
   },
   plugins: [],
 };
+// box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;

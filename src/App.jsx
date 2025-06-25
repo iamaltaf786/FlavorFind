@@ -7,6 +7,7 @@ import ErrorPage from "./component/ErrorPage";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import FoodCart from "./component/FoodCart";
+import HeroSection from "./component/HeroSection";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         {/* Main content that changes based on route */}
         <div className="flex-grow">
           <Routes>
-            <Route path="/Food-Recipe-App/" element={<FoodCart />} />
+            {/* <Route path="/Food-Recipe-App/" element={<FoodCart />} /> */}
+            <Route path="/Food-Recipe-App/" element={<HeroSection />} />
             {/* <Route path="/home" element={<MainPage />} /> */}
             {/* <Route path="/meal/:mealid" element={<MealInfo />} /> */}
             {/* <Route path="/categories" element={<CategoryList />} /> */}

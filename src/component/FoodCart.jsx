@@ -10,19 +10,19 @@ function FoodCart() {
 
         <div className="flex justify-center items-center gap-10 mx-40">
           <div>
-            <img className="rounded-2xl shadow-xl" src="src\assets\cake-1.jpg" alt="cake-1" />
+            <img className="rounded-2xl shadow-customRed transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg" src="src\assets\cake-1.jpg" alt="cake-1" />
           </div>
           <div>
-            <img className="rounded-2xl shadow-xl" src="src\assets\soup-1.jpg" alt="soup-2" />
+            <img className="rounded-2xl shadow-customRed transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg" src="src\assets\soup-1.jpg" alt="soup-2" />
           </div>
           <div>
-            <img className="rounded-2xl shadow-xl" src="src\assets\breakfast-1.jpg" alt="breakfast-3" />
+            <img className="rounded-2xl shadow-customRed transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg" src="src\assets\breakfast-1.jpg" alt="breakfast-3" />
           </div>
           <div>
-            <img className="rounded-2xl shadow-xl" src="src\assets\fish-1.jpg" alt="fish-4" />
+            <img className="rounded-2xl shadow-customRed transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg" src="src\assets\fish-1.jpg" alt="fish-4" />
           </div>
         </div>
-        <MainPage />
+        {/* <MainPage /> */}
       </div>
     </>
   );
