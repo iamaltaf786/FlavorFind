@@ -16,7 +16,7 @@ function MealCards({ detail }) {
               className="w-full h-64 rounded-t-lg"
             />
             <p className="font-semibold mt-4 mb-4">{curItem.strMeal}</p>
-            <NavLink to={`/Food-Recipe-App/meal/${curItem.idMeal}`}>
+            <NavLink to={`/FlavorFind/meal/${curItem.idMeal}`}>
               <button className="w-40 bg-customOrange text-white text-lg border-none rounded-full py-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:bg-orange-600">
                 Recipe
               </button>

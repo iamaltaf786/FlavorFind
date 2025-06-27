@@ -17,11 +17,11 @@ function App() {
         {/* Main content that changes based on route */}
         <div className="flex-grow">
           <Routes>
-            <Route path="/Food-Recipe-App/" element={<HeroSection />} />
+            <Route path="/FlavorFind/" element={<HeroSection />} />
             <Route path="/home" element={<HeroSection />} />
-            <Route path="/Food-Recipe-App/meal/:mealid" element={<MealInfo />} />
-            <Route path="/Food-Recipe-App/categories" element={<CategoryList />} />
-            <Route path="/Food-Recipe-App/categories/:categoryid" element={<CategoryDetail />} />
+            <Route path="/FlavorFind/meal/:mealid" element={<MealInfo />} />
+            <Route path="/FlavorFind/categories" element={<CategoryList />} />
+            <Route path="/FlavorFind/categories/:categoryid" element={<CategoryDetail />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>

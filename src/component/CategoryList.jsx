@@ -43,7 +43,7 @@ function CategoryList() {
     <div className="grid grid-cols-3 gap-4 p-4">
       {categories.map((category) => (
         <Link
-          to={`/Food-Recipe-App/categories/${category.idCategory}`} // Adjust the route as necessary
+          to={`/FlavorFind/categories/${category.idCategory}`} // Adjust the route as necessary
           key={category.idCategory}
           className="flex flex-col items-center bg-yellow-200 p-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl" // Added hover effects on the card
         >

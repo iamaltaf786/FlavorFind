@@ -12,11 +12,11 @@ function Navbar() {
 
       <div className='navbars'>
         <ul className='flex justify-between items-center gap-3 text-gray-500'>
-          <NavLink to="/Food-Recipe-App/">
+          <NavLink to="/FlavorFind/">
             <li className='px-3 py-2 hover:cursor-pointer text-orange-400 font-semibold'>Home</li>
           </NavLink>
           <li className='px-3 py-2 hover:cursor-pointer'>Recipes</li>
-          <NavLink to='/Food-Recipe-App/categories'>
+          <NavLink to='/FlavorFind/categories'>
             <li className='px-3 py-2 hover:cursor-pointer'>Categories</li>
           </NavLink>
           <li className='px-3 py-2 hover:cursor-pointer'>My Kitchen</li>
