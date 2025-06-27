@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FoodCart from "./FoodCart";
 import MealCards from "./MealCards";
+import thaliImg from "../assets/thali-1.jpg";
 
 function HeroSection() {
   const [search, setSearch] = useState("");
@@ -73,7 +74,7 @@ function HeroSection() {
         {/* Right Image Area */}
         <div className="flex-1 relative">
           <img
-            src="src\assets\thali-1.jpg"
+            src={thaliImg}
             alt="Food Plate"
             className="rounded-full shadow-lg w-[350px] h-[350px] object-cover mx-auto animate-spin [animation-duration:60s] ease-linear"
           />
