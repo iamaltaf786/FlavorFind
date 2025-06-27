@@ -31,8 +31,6 @@ function HeroSection() {
         clearTimeout(loadingTimer); // Clear timer
         setData(data.meals); // Set fetched data
         setLoading(false); // Hide loading once data is ready
-      
-        console.log(data.meals);
       } catch {
         console.error("Error fetching data");
         

@@ -1,5 +1,4 @@
 import React from "react";
-import MainPage from "./MainPage";
 
 function FoodCart() {
   return (
@@ -22,16 +21,9 @@ function FoodCart() {
             <img className="rounded-2xl shadow-customRed transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg" src="src\assets\fish-1.jpg" alt="fish-4" />
           </div>
         </div>
-        {/* <MainPage /> */}
       </div>
     </>
   );
 }
 
 export default FoodCart;
-
-/* 
-navbar
-food cart
-
-*/

@@ -19,7 +19,6 @@ function MealInfo() {
     };
     getInfo();
   }, [mealid]); // Dependency array with mealid
-  // console.log("MealInfo rendered");
   return (
     <>
       {!info ? (

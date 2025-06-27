@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function MealCards({ detail }) {
-  // console.log("MealCard rendered");
   return (
     <div className="flex flex-wrap gap-5 justify-center w-11/12 mx-auto mt-11">
       {detail && detail.length > 0 ? (
@@ -17,7 +16,7 @@ function MealCards({ detail }) {
               className="w-full h-64 rounded-t-lg"
             />
             <p className="font-semibold mt-4 mb-4">{curItem.strMeal}</p>
-            <NavLink to={`/${curItem.idMeal}`}>
+            <NavLink to={`/Food-Recipe-App/meal/${curItem.idMeal}`}>
               <button className="w-40 bg-customOrange text-white text-lg border-none rounded-full py-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:bg-orange-600">
                 Recipe
               </button>
