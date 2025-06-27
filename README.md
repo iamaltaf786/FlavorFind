@@ -1,4 +1,4 @@
-# Food Recipe App
+# FlavorFind
 
 <img src="src/assets/Homepage.png" alt="Screenshot 1" />
 <div style="display: flex; justify-content: space-between;">
@@ -8,7 +8,7 @@
 
 ## Description
 
-The Food Recipe App is a React-based application that allows users to search for various recipes. Users can enter a dish name (such as... cake, veg, egg, chilli, etc.) to find recipes and view detailed instructions for each meal.
+The FlavorFind App is a React-based application that allows users to search for various recipes. Users can enter a dish name (such as... cake, veg, egg, chilli, etc.) to find recipes and view detailed instructions for each meal.
 
 ## Features
 
@@ -30,7 +30,7 @@ To get a local copy up and running, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/iamaltaf786/Food-Recipe-App.git
+   git clone https://github.com/iamaltaf786/FlavorFind.git
    cd your-repo-name
 
    ```
