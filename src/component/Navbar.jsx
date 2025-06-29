@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='container flex justify-around items-center h-16 bg-white'>
+    <div className='container flex justify-around items-center h-16 bg-[#dcdcdc]'>
       <div className='webName-icon flex justify-between items-center'>
         <div className='text-2xl mr-2'>🍽️</div>
         <h1 className='text-2xl font-bold'>FlavorFind</h1>
@@ -24,10 +24,10 @@ function Navbar() {
       </div>
 
       <div className='fav-profile flex justify-between items-center'>
-        <div className='p-3 rounded-xl mr-4 hover:bg-green-500'>
-          <MdFavoriteBorder color='gray' />
+        <div className='p-3 rounded-xl mr-4 hover:bg-green-500 cursor-pointer border border-red-300'>
+          <MdFavoriteBorder color='white' />
         </div>
-        <div className='p-3 border-2 rounded-full bg-orange-500'>
+        <div className='p-3 border-2 rounded-full bg-orange-500 hover:bg-orange-400 cursor-pointer'>
           <MdPersonOutline color='white' />
         </div>
       </div>
